@@ -100,8 +100,6 @@ async def check_ban_command(ctx):
         region = ban_status.get("region", "N/A")
         ban = ban_status.get("ban_status", "false")
         ban_date = ban_status.get("ban_date", "N/A")
-        developer = ban_status.get("developer", "Wotax")
-
         is_banned = (str(ban).lower() == "true")
         id_str = f"`{user_id}`"
 
@@ -124,8 +122,7 @@ async def check_ban_command(ctx):
         file = discord.File("assets/banned.gif" if is_banned else "assets/notbanned.gif", filename="status.gif")
         embed.set_image(url="attachment://status.gif")
         embed.set_thumbnail(url=ctx.author.avatar.url if ctx.author.avatar else ctx.author.default_avatar.url)
-        embed.set_footer(text=f"DEVELOPED BY {developer}\nJoin Our Server ❤️ : https://discord.gg/9yCkYfh3Nh")
-
+        embed.set_footer(text=f"DEVELOPED BY FAX")
         await ctx.send(embed=embed, file=file)
 
 
